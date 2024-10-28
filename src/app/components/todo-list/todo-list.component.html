@@ -1,0 +1,24 @@
+<form #formular="ngForm" (submit)="onSubmit(formular)">
+  <div>
+    <label for="title">Title</label>
+    <input type="text" name="title" ngModel required>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input type="text" name="description" ngModel required>
+  </div>
+  <div>
+    <label for="priority">Priority</label>
+    <select name="priority" [(ngModel)]="selectedPriority">
+      <option value="0">low</option>
+      <option value="1">middle</option>
+      <option value="2">urgent</option>
+    </select>
+  </div>
+  <button type="submit">Send</button>
+</form>
+<ul>
+  @for (task of tasks(); track $index) {
+    <li>{{task.title}} - {{task.description}} - {{task.priority}} ({{$index}})<button (click)="removeLi($index)">delete</button></li>
+  }
+</ul>
