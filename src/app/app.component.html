@@ -1,2 +1,17 @@
 <app-testing></app-testing>
 <app-todo-list></app-todo-list>
+
+
+<h2>Input signal</h2>
+<p>Parent status: {{status}}</p>
+<input type="text" [(ngModel)]="names" name="names">
+
+<app-user-card [(active)]="status" [name]="names" [(lastName)]="lastName" email="rau@gmail.com" (activeChange)="changeSon()"></app-user-card>
+<app-form-decorator></app-form-decorator>
+
+<app-article>
+  <h1>Test</h1>
+  <p>Content 1</p>
+  <p>Content 2</p>
+  <button #seeMore>see more</button>
+</app-article>
